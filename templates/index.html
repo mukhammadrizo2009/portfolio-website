@@ -12,173 +12,239 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Animated Background */
-        body::before {
-            content: '';
+        /* Navigation */
+        .navbar {
             position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            background: rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            color: #ffffff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            border-color: #3b82f6;
+            transform: rotate(180deg);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .canvas-bg {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-            animation: pulse 8s ease-in-out infinite;
+            z-index: 0;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            padding: 3rem;
+            border: 3px solid #3b82f6;
+            border-radius: 15px;
+            background: rgba(30, 41, 59, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title .greeting {
+            display: block;
+            font-size: 4rem;
+        }
+
+        .hero-title .name-line {
+            display: block;
+        }
+
+        .text-accent {
+            color: #dc2626;
+        }
+
+        .hero-title .role {
+            display: block;
+            font-size: 3.5rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-links a {
+            color: #b0b0b0;
+            transition: all 0.3s;
+            font-size: 1.5rem;
+        }
+
+        .social-links a:hover {
+            color: #dc2626;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 550px;
+            height: 550px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Header Section */
-        .header {
-            padding: 60px 20px;
-            margin-bottom: 60px;
-            background: rgba(26, 26, 46, 0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(220, 38, 38, 0.1), transparent);
-            animation: rotate 10s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .header-text {
-            flex: 1;
-        }
-
-        .header-image {
-            flex: 0 0 auto;
-        }
-
-        .profile-image-wrapper {
-            position: relative;
-            width: 300px;
-            height: 300px;
-        }
-
-        .profile-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(135deg, #dc2626, #f97316);
-            border-radius: 50%;
-            animation: spin 8s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .profile-image {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(26, 26, 46, 0.9);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff, #dc2626);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .header h3 {
-            font-size: 1.5rem;
-            color: #dc2626;
-            margin-bottom: 20px;
-            font-weight: 500;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-
-        .header p {
-            font-size: 1rem;
-            color: #b0b0b0;
-            line-height: 1.8;
-            animation: fadeInUp 0.8s ease 0.4s backwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            padding: 0 3rem;
         }
 
         /* Section Styles */
         .section {
-            margin-bottom: 80px;
+            padding: 6rem 0;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
+            font-size: 3rem;
             text-align: center;
+            margin-bottom: 4rem;
             position: relative;
             padding-bottom: 15px;
         }
@@ -191,65 +257,50 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #dc2626, #f97316);
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
             border-radius: 2px;
         }
 
         /* Skills Section */
+        .skills {
+            background: #1e293b;
+        }
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         .skill {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(30, 30, 46, 0.8));
-            padding: 25px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.8));
+            padding: 2rem;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
         .skill:hover {
             transform: translateY(-5px);
-            border-color: rgba(220, 38, 38, 0.5);
-            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
-        }
-
-        .skill:hover::before {
-            opacity: 1;
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
         }
 
         .skill-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            position: relative;
+            margin-bottom: 1rem;
         }
 
         .skill strong {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #ffffff;
         }
 
         .skill-percentage {
-            font-size: 0.9rem;
-            color: #dc2626;
+            font-size: 1rem;
+            color: #3b82f6;
             font-weight: 600;
         }
 
@@ -258,152 +309,126 @@
             height: 10px;
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
         }
 
         .bar {
             height: 100%;
-            background: linear-gradient(90deg, #dc2626, #f97316);
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
             border-radius: 10px;
             transition: width 1.5s ease;
-            position: relative;
-            box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
-        }
-
-        .bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
 
         /* Projects Section */
+        .projects {
+            background: #0f172a;
+        }
+
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
         }
 
         .project-card {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(30, 30, 46, 0.8));
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.8));
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(220, 38, 38, 0.5);
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
         }
 
         .project-content {
-            padding: 30px;
-            position: relative;
+            padding: 2rem;
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
             color: #ffffff;
         }
 
         .project-card p {
             color: #b0b0b0;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
 
         .tech-stack {
             display: inline-block;
-            background: rgba(220, 38, 38, 0.1);
-            color: #dc2626;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
-            margin-bottom: 20px;
-            border: 1px solid rgba(220, 38, 38, 0.3);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
         .project-links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
             padding: 10px 20px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
         }
 
         .project-link:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
         }
 
         .project-link.secondary {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .project-link.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
 
         /* Contact Section */
+        .contact {
+            background: #1e293b;
+        }
+
         .contact-section {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(30, 30, 46, 0.8));
-            padding: 60px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.8));
+            padding: 4rem;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px 20px;
+            padding: 1rem 1.5rem;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             border-radius: 10px;
             color: #ffffff;
             font-size: 1rem;
@@ -414,9 +439,9 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #dc2626;
+            border-color: #3b82f6;
             background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
         }
 
         .form-group textarea {
@@ -426,13 +451,13 @@
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #666;
+            color: #64748b;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
             border: none;
             border-radius: 10px;
@@ -440,79 +465,121 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .submit-btn:hover::before {
-            width: 300px;
-            height: 300px;
         }
 
         .submit-btn:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
-        }
-
-        .submit-btn span {
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
         }
 
         .empty-state {
             text-align: center;
-            padding: 60px 20px;
-            color: #666;
+            padding: 4rem 2rem;
+            color: #64748b;
             font-size: 1.1rem;
         }
 
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .footer p {
+            color: #64748b;
+        }
+
         /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-title .greeting {
+                font-size: 3rem;
+            }
+
+            .hero-title .role {
+                font-size: 2.8rem;
+            }
+
+            .image-wrapper {
+                width: 450px;
+                height: 450px;
+            }
+        }
+
         @media (max-width: 968px) {
-            .header-content {
+            .nav-menu {
+                gap: 2rem;
+            }
+
+            .hero-container {
                 flex-direction: column-reverse;
                 text-align: center;
-                gap: 40px;
             }
 
-            .profile-image-wrapper {
-                width: 250px;
-                height: 250px;
+            .hero-content {
+                max-width: 100%;
             }
 
-            .profile-image {
-                width: 250px;
-                height: 250px;
+            .hero-title {
+                font-size: 2.5rem;
             }
 
-            .header h1 {
+            .hero-title .greeting {
+                font-size: 2.2rem;
+            }
+
+            .hero-title .role {
                 font-size: 2rem;
             }
 
-            .header h3 {
-                font-size: 1.3rem;
+            .image-wrapper {
+                width: 350px;
+                height: 350px;
+            }
+
+            .social-links {
+                justify-content: center;
             }
         }
 
         @media (max-width: 768px) {
-            .header h1 {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-container {
+                padding: 0 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-title .greeting {
                 font-size: 1.8rem;
             }
 
-            .header h3 {
-                font-size: 1.2rem;
+            .hero-title .role {
+                font-size: 1.6rem;
+            }
+
+            .image-wrapper {
+                width: 280px;
+                height: 280px;
             }
 
             .section-title {
@@ -524,51 +591,77 @@
                 grid-template-columns: 1fr;
             }
 
-            .container {
-                padding: 20px 15px;
-            }
-
             .contact-section {
-                padding: 40px 20px;
-            }
-
-            .profile-image-wrapper {
-                width: 200px;
-                height: 200px;
-            }
-
-            .profile-image {
-                width: 200px;
-                height: 200px;
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        {% if profile %}
-        <div class="header">
-            <div class="header-content">
-                <div class="header-text">
-                    <h1>Hi, I'm {{ profile.full_name }}</h1>
-                    <h3>{{ profile.title }}</h3>
-                    <p>{{ profile.bio }}</p>
-                </div>
-                
-                {% if profile.image %}
-                <div class="header-image">
-                    <div class="profile-image-wrapper">
-                        <img src="{{ profile.image.url }}" alt="{{ profile.full_name }}" class="profile-image">
-                    </div>
-                </div>
-                {% endif %}
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+            </button>
         </div>
-        {% endif %}
+    </nav>
 
-        <!-- Skills Section -->
-        <div class="section">
+    <!-- Hero Section -->
+    {% if profile %}
+    <section id="home" class="hero">
+        <canvas class="canvas-bg"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="greeting">Hi,</span>
+                    <span class="name-line">I'm <span class="text-accent">{{ profile.full_name }}</span></span>
+                    <span class="role">{{ profile.title }}</span>
+                </h1>
+                <a href="#contact" class="btn-primary">Contact</a>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Behance">Be</a>
+                </div>
+            </div>
+            
+            {% if profile.image %}
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="{{ profile.image.url }}" alt="{{ profile.full_name }}">
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
             <h2 class="section-title">My Skills</h2>
             
             {% if skills %}
@@ -591,9 +684,11 @@
             </div>
             {% endif %}
         </div>
+    </section>
 
-        <!-- Projects Section -->
-        <div class="section">
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
             <h2 class="section-title">My Projects</h2>
             
             {% if projects %}
@@ -607,15 +702,11 @@
                         
                         <div class="project-links">
                             {% if project.github_url %}
-                            <a href="{{ project.github_url }}" target="_blank" class="project-link">
-                                <span>GitHub</span>
-                            </a>
+                            <a href="{{ project.github_url }}" target="_blank" class="project-link">GitHub</a>
                             {% endif %}
                             
                             {% if project.live_url %}
-                            <a href="{{ project.live_url }}" target="_blank" class="project-link secondary">
-                                <span>Live Demo</span>
-                            </a>
+                            <a href="{{ project.live_url }}" target="_blank" class="project-link secondary">Live</a>
                             {% endif %}
                         </div>
                     </div>
@@ -628,9 +719,11 @@
             </div>
             {% endif %}
         </div>
+    </section>
 
-        <!-- Contact Section -->
-        <div class="section">
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
             <h2 class="section-title">Contact Me</h2>
             
             <div class="contact-section">
@@ -646,19 +739,24 @@
                     </div>
                     
                     <div class="form-group">
-                        <input type="text" name="telegram_username" placeholder="Your Telegram Username (e.g., @username)" required>
+                        <input type="text" name="telegram_username" placeholder="Your Telegram Username" required>
                     </div>
                     
                     <div class="form-group">
                         <textarea name="message" placeholder="Your Message" required></textarea>
                     </div>
                     
-                    <button type="submit" class="submit-btn">
-                        <span>Send Message</span>
-                    </button>
+                    <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
