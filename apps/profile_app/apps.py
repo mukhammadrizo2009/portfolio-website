@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AboutConfig(AppConfig):
+class ProfileAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.about'
+    name = 'apps.profile_app'
