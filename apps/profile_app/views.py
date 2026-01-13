@@ -24,7 +24,7 @@ class ProfileAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 def home_view(request):
-    profile = Profile.objects.get(id=1)
+    profile = Profile.objects.last()
     skills = Skill.objects.all()
     projects = Project.objects.all()
     education = Education.objects.all().order_by("-start_year")
