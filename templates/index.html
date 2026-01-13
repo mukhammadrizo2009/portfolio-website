@@ -581,6 +581,7 @@
       box-shadow: 0 4px 12px rgba(37,99,235,0.15);
     }
 
+
     /* ── Contact: Murakkab forma animatsiya + glow ── */
     .contact {
       background: linear-gradient(to bottom, #f0f9ff, #dbeafe);
@@ -709,6 +710,83 @@
       .skill-logo { margin-bottom: 2.5rem; }
       .contact-section { padding: 4rem; }
     }
+        /* ── Education Section ── */
+    .education {
+      background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    }
+
+    .education-grid {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 4rem;
+    }
+
+    .education-card {
+      background: linear-gradient(135deg, #ffffff, #f1f5f9);
+      padding: 4rem;
+      border-radius: 32px;
+      box-shadow: 0 25px 70px rgba(37,99,235,0.12);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .education-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #1d4ed8, #60a5fa);
+    }
+
+    .education-card:hover {
+      transform: translateY(-18px) scale(1.03);
+      box-shadow: 0 45px 120px rgba(37,99,235,0.25);
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+
+    .edu-header h3 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: #1e293b;
+    }
+
+    .edu-years {
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #dbeafe, #c7d2fe);
+      color: #1d4ed8;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.15);
+    }
+
+    .edu-school {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1.8rem;
+      color: #334155;
+    }
+
+    .edu-desc {
+      font-size: 1.2rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+
   </style>
 </head>
 <body>
@@ -721,6 +799,7 @@
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
@@ -739,11 +818,23 @@
         <a href="#contact" class="btn-primary">Let's Work Together</a>
 
         <div class="social-links">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-telegram"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/in/muhammad-rizo-mirzoyev-9272143a36" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="https://github.com/mukhammadrizo2009" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://t.me/mirzayeoff" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+
+          <a href="https://instagram.com/m1rzayeoff" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
+
       </div>
 
       {% if profile.image %}
@@ -808,7 +899,34 @@
     </div>
   </section>
 
+
+  <!-- Education -->
+  <section id="education" class="section education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-grid">
+      {% for edu in education %}
+      <div class="education-card">
+        <div class="edu-header">
+          <h3>{{ edu.degree }}</h3>
+          <span class="edu-years">
+            {{ edu.start_year }}
+            {% if edu.end_year %} - {{ edu.end_year }}{% else %} - Present{% endif %}
+          </span>
+        </div>
+
+        <strong class="edu-school">{{ edu.institution }}</strong>
+
+        {% if edu.description %}
+        <p class="edu-desc">{{ edu.description }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
   <!-- Contact -->
+
   <section id="contact" class="section contact">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-section">
