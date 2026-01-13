@@ -800,7 +800,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">Personal Page</div>
+      <div class="logo">Personal Website</div>
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -945,16 +945,17 @@
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-section">
       <p class="contact-intro">
+        Fikringiz bormi? Loyihangiz bormi? Yoki shunchaki salomlashmoqchimisiz?
+        Men har doim yangi imkoniyatlar va qiziqarli suhbatlar uchun ochiqman!
+
         Have an idea? Project? Or just want to say hello?  
         I'm always open for new opportunities and interesting conversations!
-      </p>
-
       <form method="post" action="/api/contact/">
         {% csrf_token %}
         <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
         <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
-        <div class="form-group"><input type="text" name="telegram_username" placeholder="Telegram @username" required></div>
-        <div class="form-group"><input type="text" name="whatsapp_number" placeholder="Whatsapp Number" required></div>
+        <div class="form-group"><input type="text" name="telegram_username" placeholder="Your Telegram @username" required></div>
+        <div class="form-group"><input type="text" name="whatsapp_number" placeholder="Your Whatsapp Number" required></div>
         <div class="form-group"><textarea name="message" placeholder="Your Message" rows="7" required></textarea></div>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
@@ -963,7 +964,7 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© {{ 'now'|date:"Y" }} {{ profile.full_name }} • Made with passion & advanced designs</p>
+    <p>© 2026 • {{ profile.full_name }} • Sahifa sizni qiziqtirgan bo'lsa fikringizni yozib qoldiring! & Bu biz uchun juda ham muhim!</p>
   </footer>
 
 <script>
