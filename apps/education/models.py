@@ -4,6 +4,7 @@ from django.db import models
 class Education(models.Model):
     institution = models.CharField(max_length=200)
     degree = models.CharField(max_length=200)
+    website = models.URLField(null=True, blank=True)
     start_year = models.IntegerField()
     end_year = models.IntegerField(null=True, blank=True)
     logo = models.ImageField(upload_to='education/', null=True, blank=True)

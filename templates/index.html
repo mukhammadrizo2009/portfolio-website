@@ -525,7 +525,7 @@
     }
 
     .project-card:hover::before {
-      opacity: 1;
+      pointer-events: none;
     }
 
     .project-card:hover {
@@ -610,6 +610,9 @@
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       opacity: 0.3;
+    }
+    .contact-section::before {
+      pointer-events: none;
     }
 
     .contact-intro {
@@ -813,8 +816,8 @@
     <div class="hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
-          <span class="greeting">Hi, I'm</span>
-          <span class="name-line"><span class="text-accent">{{ profile.name|default:"FULL NAME YO'Q"  }}</span></span>
+          <span class="greeting">Hello, How are you? | My name is</span>
+          <span class="name-line"><span class="text-accent">{{ profile.full_name}}</span></span>
           <span class="role">{{ profile.title }}</span>
         </h1>
 
@@ -862,7 +865,7 @@
         <div class="skill-content">
           <div class="skill-header">
             <strong>{{ skill.name }}</strong>
-            <span class="skill-percentage">{{ skill.level }}%</span>
+            <span class="skill-percentage">{{ skill.level }}</span>
           </div>
           <div class="bar-container">
             <div class="bar" data-level="{{ skill.level }}"></div>
@@ -903,30 +906,38 @@
   </section>
 
 
-  <!-- Education -->
-  <section id="education" class="section education">
-    <h2 class="section-title">Education</h2>
+ <!-- Education -->
+<section id="education" class="section education">
+  <h2 class="section-title">Education</h2>
 
-    <div class="education-grid">
-      {% for edu in education %}
-      <div class="education-card">
-        <div class="edu-header">
-          <h3>{{ edu.degree }}</h3>
-          <span class="edu-years">
-            {{ edu.start_year }}
-            {% if edu.end_year %} - {{ edu.end_year }}{% else %} - Present{% endif %}
-          </span>
-        </div>
+  <div class="education-grid">
+    {% for edu in education %}
+    <div class="education-card">
 
-        <strong class="edu-school">{{ edu.institution }}</strong>
-
-        {% if edu.description %}
-        <p class="edu-desc">{{ edu.description }}</p>
-        {% endif %}
+      <div class="edu-header">
+        <h3>{{ edu.degree }}</h3>
+        <span class="edu-years">
+          {{ edu.start_year }}
+          {% if edu.end_year %} - {{ edu.end_year }}{% else %} - Present{% endif %}
+        </span>
       </div>
-      {% endfor %}
+
+      {% if edu.website %}
+      <a href="{{ edu.website }}" target="_blank" class="edu-school">
+        {{ edu.institution }}
+      </a>
+      {% else %}
+      <strong class="edu-school">{{ edu.institution }}</strong>
+      {% endif %}
+
+      {% if edu.description %}
+      <p class="edu-desc">{{ edu.description }}</p>
+      {% endif %}
+
     </div>
-  </section>
+    {% endfor %}
+  </div>
+</section>
 
   <!-- Contact -->
 
@@ -942,7 +953,8 @@
         {% csrf_token %}
         <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
         <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
-        <div class="form-group"><input type="text" name="telegram_username" placeholder="Telegram Username" required></div>
+        <div class="form-group"><input type="text" name="telegram_username" placeholder="Telegram @username" required></div>
+        <div class="form-group"><input type="text" name="whatsapp_number" placeholder="Whatsapp Number" required></div>
         <div class="form-group"><textarea name="message" placeholder="Your Message" rows="7" required></textarea></div>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>

@@ -14,7 +14,8 @@ class ContactAPIView(APIView):
                  "📩 > New Message | Your Personal Website<\n\n"
                 f"👤 Name: {contact.name}\n"
                 f"📧 Email: {contact.email}\n"
-                f"📎 Telegram: {contact.telegram_username}\n\n"
+                f"📞 Whatsapp: {contact.whatsapp_number}\n"
+                f"📎 Telegram: @{contact.telegram_username}\n\n"
                 f"💬 Message:\n{contact.message}\n"
             )
             send_telegram_message(message)
