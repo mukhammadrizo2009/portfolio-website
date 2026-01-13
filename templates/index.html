@@ -224,11 +224,12 @@
       to { opacity: 1; transform: perspective(1000px) rotateY(0) translateY(0); }
     }
 
-    .hero-title span {
+    .hero-title > span {
       display: block;
       opacity: 0;
       transform: translateX(-100px) rotate(-5deg);
     }
+
 
     .greeting  { animation: titleSlideComplex 1.3s 0.6s forwards cubic-bezier(0.16, 1, 0.3, 1); }
     .name-line { animation: titleSlideComplex 1.5s 0.8s forwards cubic-bezier(0.16, 1, 0.3, 1); }
@@ -249,6 +250,7 @@
     }
 
     .text-accent {
+      display: inline-block;
       background: linear-gradient(90deg, #1d4ed8, #3b82f6, #60a5fa);
       background-size: 200% auto;
       -webkit-background-clip: text;
@@ -314,7 +316,7 @@
       left: 50%;
       width: 0;
       height: 3px;
-      background: #2563eb;
+      background: #244a9e;
       transition: width 0.5s, left 0.5s;
     }
 
@@ -788,13 +790,14 @@
     }
 
   </style>
+      
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">Portfolio</div>
+      <div class="logo">Personal Page</div>
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -811,7 +814,7 @@
       <div class="hero-content">
         <h1 class="hero-title">
           <span class="greeting">Hi, I'm</span>
-          <span class="name-line"><span class="text-accent">{{ profile.full_name }}</span></span>
+          <span class="name-line"><span class="text-accent">{{ profile.name|default:"FULL NAME YO'Q"  }}</span></span>
           <span class="role">{{ profile.title }}</span>
         </h1>
 
@@ -887,7 +890,7 @@
           <span class="tech-stack">{{ project.tech_stack }}</span>
           <div style="display:flex; gap:1.5rem; margin-top:2rem;">
             {% if project.github_url %}
-            <a href="{{ project.github_url }}" target="_blank" style="padding:14px 28px; background:linear-gradient(135deg, #1d4ed8, #2563eb); color:white; border-radius:16px; text-decoration:none; font-weight:700; box-shadow:0 8px 20px rgba(29,78,216,0.2);">GitHub</a>
+            <a href="{{ project.github_url }}" target="_blank" style="padding:14px 28px; background:linear-gradient(135deg, #1d4ed8, #4578e4); color:white; border-radius:16px; text-decoration:none; font-weight:700; box-shadow:0 8px 20px rgba(29,78,216,0.2);">GitHub</a>
             {% endif %}
             {% if project.live_url %}
             <a href="{{ project.live_url }}" target="_blank" style="padding:14px 28px; background:linear-gradient(135deg, #3b82f6, #60a5fa); color:white; border-radius:16px; text-decoration:none; font-weight:700; box-shadow:0 8px 20px rgba(59,130,246,0.2);">Live Demo</a>
