@@ -388,7 +388,7 @@
 
     /* ── Skills: Murakkab 3D tilt + multi-anim ── */
     .skills {
-      background: #ffffff;
+      background: #cbd7f4;
     }
 
     .skills-grid {
@@ -401,7 +401,7 @@
     }
 
     .skill {
-      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      background: linear-gradient(135deg, #a6b6db, #f3f4f5);
       padding: 4rem;
       border-radius: 32px;
       box-shadow: 0 25px 70px rgba(37,99,235,0.12);
@@ -428,8 +428,8 @@
       height: 130px;
       border-radius: 25%;
       overflow: hidden;
-      border: 10px solid #c7d2fe;
-      box-shadow: 0 20px 50px rgba(37,99,235,0.25);
+      border: 1px solid #c7d2fe;
+      box-shadow: 0 20px 50px rgba(26, 142, 178, 0.25);
       transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       flex-shrink: 0;
       animation: logoPulseComplex 10s infinite ease-in-out;
@@ -447,13 +447,13 @@
 
     @keyframes logoPulseComplex {
       0%,100% { transform: scale(1) rotate(0deg); border-color: #c7d2fe; }
-      50% { transform: scale(1.12) rotate(8deg); border-color: #60a5fa; }
+      50% { transform: scale(1.12) rotate(8deg); border-color: #3daa51; }
     }
 
     .skill:hover .skill-logo {
       transform: scale(1.22) rotate(16deg);
-      border-color: #3b82f6;
-      box-shadow: 0 30px 80px rgba(37,99,235,0.4);
+      border-color: #0d61e8;
+      box-shadow: 0 30px 80px rgba(17, 197, 134, 0.4);
     }
 
     .skill-content {
@@ -480,7 +480,7 @@
     }
 
     .bar-container {
-      background: linear-gradient(to bottom, #e0f2fe, #dbeafe);
+      background: linear-gradient(to bottom, #5086af, #4a84d1);
       height: 20px;
       border-radius: 14px;
       overflow: hidden;
@@ -490,7 +490,7 @@
     .bar {
       height: 100%;
       width: 0;
-      background: linear-gradient(90deg, #1d4ed8, #2563eb, #3b82f6, #60a5fa);
+      background: linear-gradient(90deg, #5f7cce, #5e79b3, #f63bf3, #43a576);
       background-size: 400% 100%;
       animation: barShineComplex 5s infinite linear;
       transition: width 2.8s cubic-bezier(0.22, 1, 0.36, 1);
@@ -503,6 +503,9 @@
     }
 
     /* ── Projects: Murakkab card flip + overlay ── */
+    .projects {
+      background: #cbd7f4;
+    }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
@@ -513,10 +516,10 @@
     }
 
     .project-card {
-      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      background: linear-gradient(135deg, #dbe1c0, #f8fafc);
       border-radius: 32px;
       overflow: hidden;
-      box-shadow: 0 25px 70px rgba(37,99,235,0.12);
+      box-shadow: 0 25px 70px rgba(12, 226, 141, 0.12);
       transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       position: relative;
     }
@@ -528,7 +531,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, transparent, rgba(37,99,235,0.08));
+      background: linear-gradient(to bottom, transparent, rgba(9, 78, 226, 0.08));
       opacity: 0;
       transition: opacity 0.6s;
       z-index: 1;
@@ -540,7 +543,7 @@
 
     .project-card:hover {
       transform: translateY(-25px) scale(1.04);
-      box-shadow: 0 50px 120px rgba(37,99,235,0.3);
+      box-shadow: 0 50px 120px rgba(236, 142, 142, 0.3);
     }
 
     .project-image {
@@ -556,7 +559,7 @@
       left: 0;
       width: 100%;
       height: 50%;
-      background: linear-gradient(to top, rgba(29,78,216,0.15), transparent);
+      background: linear-gradient(to top, rgba(29, 182, 216, 0.15), transparent);
       z-index: 1;
     }
 
@@ -584,9 +587,9 @@
 
     .tech-stack {
       display: inline-block;
-      background: linear-gradient(135deg, #dbeafe, #c7d2fe);
-      color: #1d4ed8;
-      padding: 12px 24px;
+      background: linear-gradient(135deg, #5500ff, #c7d2fe);
+      color: #ffffff;
+      padding: 15px 60px;
       border-radius: 50px;
       font-weight: 700;
       margin: 2rem 0;
@@ -596,13 +599,13 @@
 
     /* ── Contact: Murakkab forma animatsiya + glow ── */
     .contact {
-      background: linear-gradient(to bottom, #f0f9ff, #dbeafe);
+      background: #cbd7f4;
     }
 
     .contact-section {
       max-width: 960px;
       margin: 0 auto;
-      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      background: linear-gradient(135deg, #a5df99, #f8fafc);
       padding: 6rem;
       border-radius: 40px;
       box-shadow: 0 40px 100px rgba(37,99,235,0.15);
@@ -725,9 +728,9 @@
       .skill-logo { margin-bottom: 2.5rem; }
       .contact-section { padding: 4rem; }
     }
-        /* ── Education Section ── */
+    /* ── Education Section ── */
     .education {
-      background: linear-gradient(to bottom, #ffffff, #f8fafc);
+      background: #cbd7f4;
     }
 
     .education-grid {
@@ -740,7 +743,7 @@
     }
 
     .education-card {
-      background: linear-gradient(135deg, #ffffff, #f1f5f9);
+      background: linear-gradient(135deg, #f0ebeb, #7fb7eb);
       padding: 4rem;
       border-radius: 32px;
       box-shadow: 0 25px 70px rgba(37,99,235,0.12);
@@ -756,12 +759,53 @@
       left: 0;
       width: 100%;
       height: 6px;
-      background: linear-gradient(90deg, #1d4ed8, #60a5fa);
+      background: linear-gradient(90deg, #1d4ed8, #093264);
     }
 
     .education-card:hover {
       transform: translateY(-18px) scale(1.03);
-      box-shadow: 0 45px 120px rgba(37,99,235,0.25);
+      box-shadow: 0 45px 120px rgb(86, 37, 235);
+    }
+    .education-logo {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 2.5rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      border-radius: 75%;
+      overflow: hidden;
+      border: 4px solid #2b0ee4;
+      box-shadow: 0 20px 50px rgba(238, 240, 236, 0.649);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      flex-shrink: 0;
+      animation: logoPulseComplex 10s infinite ease-in-out;
+    }
+
+    /* MUHIM QISM */
+    .education-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      /* markazdan kesadi */
+      object-position: center;
+      display: block;
+    }
+
+
+    @keyframes logoPulseComplex {
+      0%,100% { transform: scale(1) rotate(0deg); border-color: #c7d2fe; }
+      50% { transform: scale(1.12) rotate(8deg); border-color: #60a5fa; }
+    }
+
+    .education-card:hover .education-logo {
+      transform: scale(1.22) rotate(16deg);
+      border-color: #3b82f6;
+      box-shadow: 0 30px 80px rgba(37,99,235,0.4);
+    }
+
+    .education-content {
+      flex: 1;
     }
 
     .edu-header {
@@ -875,6 +919,7 @@
         <div class="skill-content">
           <div class="skill-header">
             <strong>{{ skill.name }}</strong>
+            <span class="separator"> # </span>
             <span class="skill-percentage">{{ skill.level }}</span>
           </div>
           <div class="bar-container">
@@ -923,7 +968,9 @@
   <div class="education-grid">
     {% for edu in education %}
     <div class="education-card">
-
+      <div class="education-logo">
+          <img src="{{ edu.logo.url }}" alt="{{ edu.institution }} logo">
+      </div>
       <div class="edu-header">
         <h3>{{ edu.degree }}</h3>
         <span class="edu-years">
@@ -955,11 +1002,11 @@
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-section">
       <p class="contact-intro">
-        Fikringiz bormi? Loyihangiz bormi? Yoki shunchaki salomlashmoqchimisiz?
-        Men har doim yangi imkoniyatlar va qiziqarli suhbatlar uchun ochiqman!
-
         Have an idea? Project? Or just want to say hello?  
         I'm always open for new opportunities and interesting conversations!
+
+        Fikringiz bormi? Loyihangiz bormi? Yoki shunchaki salomlashmoqchimisiz?
+        Men har doim yangi imkoniyatlar va qiziqarli suhbatlar uchun ochiqman!
       <form method="post" action="/api/contact/">
         {% csrf_token %}
         <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
